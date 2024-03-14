@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random Business Name Generator</title>
+</head>
+<body>
+
+<div id="widget" style="text-align: center; margin-top: 20px;">
+    <button id="generateName" style="padding: 10px 20px; font-size: 16px;">Generate Business Name</button>
+    <p id="businessName" style="margin-top: 20px; font-size: 20px;">Your new business name will appear here.</p>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const adjectives = ["Global", "Dynamic", "Innovative", "Traditional", "Eco-friendly", "Reliable", "Creative", "Strategic", "Integrated", "Efficient"];
+    const nouns = ["Solutions", "Systems", "Technologies", "Concepts", "Designs", "Strategies", "Developments", "Innovations", "Enterprises", "Holdings"];
+
+    document.getElementById('generateName').addEventListener('click', function() {
+        const adjective = adjectives[Math.floor(Math.random() * adjectives.length)];
+        const noun = nouns[Math.floor(Math.random() * nouns.length)];
+        const businessName = adjective + " " + noun;
+        document.getElementById('businessName').textContent = businessName;
+    });
+});
+</script>
+
+</body>
+</html>
